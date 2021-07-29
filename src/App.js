@@ -1,25 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
-
-function App() {
+import React from 'react';
+import Admin from './components/Admin';
+import Adminhome from './components/Adminhome';
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+import {Switch,Route} from 'react-router-dom';
+import Home from './components/Home';
+import Products from './components/Products';
+const App=()=>
+{
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+    <>
+    <Switch>
+    <Route exact path="/" component={Home}></Route>
+      <Route exact path="/admin" component={Admin}></Route>
+      <Route exact path="/adminhome" component={Adminhome}></Route>
+      <Route exact path="/products" component={Products}></Route>
+    </Switch>
 
+    </>
+  )
+}
 export default App;
